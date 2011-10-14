@@ -40,7 +40,7 @@ class Checker(object):
                     if sys.version_info[0] < 3:
                         raise e.__class__("Failed for input %s with message '%s'" % (args+keywords,e)), None, sys.exc_traceback
                     else:
-                        raise e.__class__("Failed for input {}".format(args)).with_traceback(e.__traceback__)
+                        raise Exception("Failed for input {}".format(args))
                 i += 1
         
         wrapper.__doc__ = test_func.__doc__
