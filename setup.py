@@ -22,7 +22,7 @@ class test(Command):
 
 setup(
     name = 'paycheck',
-    version ='0.4.6',
+    version ='0.4.7',
     description ='A Python QuickCheck implementation',
     author ='Mark Chadwick',
     author_email ='mark.chadwick@gmail.com',
