@@ -200,6 +200,21 @@ container_generators = {
   }
 
 # ------------------------------------------------------------------------------
+# Miscellaneous generators
+# ------------------------------------------------------------------------------
+
+class ChoiceGenerator(PayCheckGenerator):
+    def __init__(self,values):
+        self.values = values
+    def __next__(self):
+        return random.choice(self.values)
+
+choiceof = ChoiceGenerator
+
+def oneof(*args):
+    return choiceof(args)
+
+# ------------------------------------------------------------------------------
 # List of exports
 # ------------------------------------------------------------------------------
 
@@ -231,6 +246,9 @@ __all__ = [
     'TupleGenerator',
     'scalar_generators',
     'container_generators',
+    'ChoiceGenerator',
+    'choiceof',
+    'oneof',
 ]
 
 if sys.version_info[0] < 3:

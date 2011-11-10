@@ -1,5 +1,5 @@
 import unittest
-from paycheck import with_checker, irange, frange
+from paycheck import with_checker, irange, frange, choiceof, oneof
 import sys
 
 class TestTypes(unittest.TestCase):
@@ -86,6 +86,14 @@ class TestTypes(unittest.TestCase):
             for key, value in dict_of_int_string.items():
                 self.assertTrue(isinstance(key, str))
                 self.assertTrue(isinstance(value, int))
+
+    @with_checker(choiceof(["A","B"]))
+    def test_choiceof(self, letter):
+        self.assertTrue(letter in ["A","B"])
+
+    @with_checker(oneof("A","B"))
+    def test_oneof(self, letter):
+        self.assertTrue(letter in ["A","B"])
 
 tests = [TestTypes]
 
