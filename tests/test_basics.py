@@ -36,6 +36,8 @@ class TestBasics(unittest.TestCase):
             self.fail("Exception was not thrown!")
         except MyException:
             pass
+        except Exception as root:
+            self.assertEqual(root.__context__,e)
 
 tests = [TestBasics]
 
