@@ -65,7 +65,6 @@ class TestGenerator(unittest.TestCase):
         generator = PayCheckGenerator.get({str:int})
         self.assertTrue(isinstance(generator, DictGenerator))
         self.assertTrue(isinstance(generator.inner, TupleGenerator))
-        print(generator.inner.generators[0].__class__)
         self.assertTrue(isinstance(generator.inner.generators[0], StringGenerator))
         self.assertTrue(isinstance(generator.inner.generators[1], IntGenerator))
 
