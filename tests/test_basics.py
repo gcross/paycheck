@@ -22,7 +22,7 @@ class TestBasics(unittest.TestCase):
             o.times_called += 1
         o.times_called = 0
         call_me()
-        self.assert_(o.times_called > 0)
+        self.assertTrue(o.times_called > 0)
 
     def test_throws_correct_exception_upon_failure(self):
         class MyException(Exception):

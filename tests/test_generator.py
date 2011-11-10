@@ -5,32 +5,32 @@ import sys
 
 class TestGenerator(unittest.TestCase):
     def test_get_int(self):
-        self.assert_(isinstance(
+        self.assertTrue(isinstance(
                     PayCheckGenerator.get(int),
                     IntGenerator
                     ))
         
     def test_get_string(self):
-        self.assert_(isinstance(
+        self.assertTrue(isinstance(
                     PayCheckGenerator.get(str),
                     StringGenerator
                     ))
 
     if sys.version_info[0] < 3:
         def test_get_unicode(self):
-            self.assert_(isinstance(
+            self.assertTrue(isinstance(
                         PayCheckGenerator.get(unicode),
                         UnicodeGenerator
                         ))
     
     def test_get_boolean(self):
-        self.assert_(isinstance(
+        self.assertTrue(isinstance(
                     PayCheckGenerator.get(bool),
                     BooleanGenerator
                     ))
     
     def test_get_float(self):
-        self.assert_(isinstance(
+        self.assertTrue(isinstance(
                     PayCheckGenerator.get(float),
                     FloatGenerator
                     ))
@@ -49,7 +49,7 @@ class TestGenerator(unittest.TestCase):
             @classmethod
             def make_new_random_generator(cls):
                 return CustomGenerator()
-        self.assert_(isinstance(
+        self.assertTrue(isinstance(
                     PayCheckGenerator.get(CustomGenerator),
                     CustomGenerator
                     ))

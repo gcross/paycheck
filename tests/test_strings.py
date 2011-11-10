@@ -22,11 +22,11 @@ class TestStrings(unittest.TestCase):
 
     @with_checker(str, str)
     def test_substring2(self, a, b):
-        self.assertEquals( (a+b)[len(a):], b )
+        self.assertEqual( (a+b)[len(a):], b )
     
     @with_checker(str, str, str)
     def test_substring3(self, a, b, c):
-        self.assertEquals((a+b+c)[len(a):len(a)+len(b)], b)
+        self.assertEqual((a+b+c)[len(a):len(a)+len(b)], b)
 
 tests = [TestStrings]
 

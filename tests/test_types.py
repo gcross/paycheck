@@ -36,7 +36,7 @@ class TestTypes(unittest.TestCase):
 
     @with_checker(bool)
     def test_boolean(self, b):
-        self.assertEquals(b, b == True)
+        self.assertEqual(b, b == True)
 
     @with_checker([int])
     def test_get_list(self, list_of_ints):
