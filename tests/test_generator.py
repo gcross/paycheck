@@ -1,4 +1,5 @@
 import unittest
+from paycheck import with_checker
 from paycheck.generator import *
 import sys
 
@@ -33,13 +34,34 @@ class TestGenerator(unittest.TestCase):
                     PayCheckGenerator.get(float),
                     FloatGenerator
                     ))
+
+    @with_checker
+    def test_get_iterable(self,values=[int]):
+        class CustomGenerator(object):
+            def __init__(self,values):
+                self.values = values
+            def __iter__(self):
+                return iter(values)
+        self.assertEqual(list(PayCheckGenerator.get(CustomGenerator(values))),values)
+
+    def test_get_custom(self):
+        class CustomGenerator(object):
+            @classmethod
+            def make_new_random_generator(cls):
+                return CustomGenerator()
+        self.assert_(isinstance(
+                    PayCheckGenerator.get(CustomGenerator),
+                    CustomGenerator
+                    ))
     
     def test_get_unknown_type_throws_exception(self):
-        getter = lambda: PayCheckGenerator.get(TestGenerator)
+        class CustomGenerator(object):
+            pass
+        getter = lambda: PayCheckGenerator.get(CustomGenerator)
         self.assertRaises(UnknownTypeException, getter)
         
     def test_bad_object_throws_exception(self):
-        getter = lambda: PayCheckGenerator.get("what?")
+        getter = lambda: PayCheckGenerator.get(None)
         self.assertRaises(UnknownTypeException, getter)
         
     def test_get_list_of_type(self):

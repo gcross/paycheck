@@ -51,17 +51,21 @@ class PayCheckGenerator(object):
     @classmethod
     def get(cls, t_def):
         try:
-            if isinstance(t_def, PayCheckGenerator):
-                return t_def
-            elif isinstance(t_def, type):
-                if issubclass(t_def, PayCheckGenerator):
-                    return t_def()
-                else:
-                    return scalar_generators[t_def]()
+            if isinstance(t_def, type):
+                return scalar_generators[t_def]()
             else:
                 return container_generators[type(t_def)](t_def)
         except KeyError:
-            raise UnknownTypeException(t_def)
+            try:
+                return t_def.make_new_random_generator()
+            except AttributeError:
+                try:
+                    return iter(t_def)
+                except TypeError:
+                    try:
+                        return iter(t_def())
+                    except TypeError:
+                        raise UnknownTypeException(t_def)
 
 # ------------------------------------------------------------------------------
 # Basic Type Generators
