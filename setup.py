@@ -28,6 +28,7 @@ setup(
     author_email ='mark.chadwick@gmail.com',
     maintainer ='Gregory Crosswhite',
     maintainer_email ='gcrosswhite@gmail.com',
+    license = 'ISC',
     url='http://github.com/gcross/paycheck',
     packages = ['paycheck'],
     cmdclass = {"build_py": build_py, "test" : test}
