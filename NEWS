@@ -1,0 +1,15 @@
+Version 1.0
+===========
+
+*) Bumped major version to 1
+*) Fixed code causing deprecation warnings
+*) Fixed a bug in a test when using Python 3
+*) Widened what is accepted as a generator by paycheck
+   (In particular, now any type can specify how to generate
+   random data for itself by providing a
+   make_new_random_generator method.)
+*) Added choice generators for generating random selections
+   from a list of values.
+*) Now in Python 3 an exception of type Exception is raised in
+   the paycheck handler rather than a new exception of the
+   type originally thrown.
