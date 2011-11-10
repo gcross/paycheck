@@ -22,11 +22,13 @@ class test(Command):
 
 setup(
     name = 'paycheck',
-    version ='0.4.7',
+    version ='1.0',
     description ='A Python QuickCheck implementation',
     author ='Mark Chadwick',
     author_email ='mark.chadwick@gmail.com',
-    url='http://github.com/markchadwick/paycheck/tree/master',
+    maintainer ='Gregory Crosswhite',
+    maintainer_email ='gcrosswhite@gmail.com',
+    url='http://github.com/gcross/paycheck',
     packages = ['paycheck'],
     cmdclass = {"build_py": build_py, "test" : test}
 )
