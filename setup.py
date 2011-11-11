@@ -22,9 +22,9 @@ class test(Command):
 
 setup(
     name = 'paycheck',
-    version ='1.0.1',
+    version ='1.0.2',
     description ='A Python QuickCheck implementation',
-    long_description = open("README.rst").read(),
+    long_description = open("README.txt").read(),
     author ='Mark Chadwick',
     author_email ='mark.chadwick@gmail.com',
     maintainer ='Gregory Crosswhite',
