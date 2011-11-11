@@ -94,9 +94,9 @@ Then give the ol’ test a run. You’ll likely see a problem:
     FAILED (failures=1)
     </code>
 
-As predicted, test*concat has bombed; note that PayCheck is nice
+As predicted, test_concat has bombed; note that PayCheck is nice
 enough to tell you which inputs caused the problem. In this case, we
-see that propety test*concat fails for the empty string, which is caused
+see that propety test_concat fails for the empty string, which is caused
 by the fact that we used “>” instead of “>=”.
 
 Nested and More Complex Types
