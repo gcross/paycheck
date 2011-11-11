@@ -1,3 +1,8 @@
+Version 1.0.1
+===========
+*) Now the README.txt file is read into the long_description field,
+   creating a home page for paycheck on PyPI.
+
 Version 1.0
 ===========
 
