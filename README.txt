@@ -21,14 +21,14 @@ Installing PayCheck
     sudo easy_install paycheck
     </code>
 
-That’s it. Get going.
+That's it. Get going.
 
 A Quick Example
 ~~~~~~~~~~~~~~~
 
-Let’s steal an example right from ScalaCheck. Here are the string
+Let's steal an example right from ScalaCheck. Here are the string
 functions
-ported to PayCheck. See what’s going on? We’re defining the types of the
+ported to PayCheck. See what's going on? We're defining the types of the
 parameters in with\_checker, then values of that type are getting passed
 to the
 function.
@@ -71,7 +71,7 @@ function.
         unittest.main()
     </code>
 
-Then give the ol’ test a run. You’ll likely see a problem:
+Then give the ol' test a run. You'll likely see a problem:
 
 ::
 
@@ -97,12 +97,12 @@ Then give the ol’ test a run. You’ll likely see a problem:
 As predicted, test_concat has bombed; note that PayCheck is nice
 enough to tell you which inputs caused the problem. In this case, we
 see that propety test_concat fails for the empty string, which is caused
-by the fact that we used “>” instead of “>=”.
+by the fact that we used ">" instead of ">=".
 
 Nested and More Complex Types
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Container and nested types are specified to PayCheck “by analogy”.
+Container and nested types are specified to PayCheck "by analogy".
 That is, unlike scalar types, which are specified by giving the type
 that you want, container types are specified by creating a non-empty
 container of the type you want which contains a specification of the
@@ -149,4 +149,3 @@ The following examples illustrate how this works:
     if __name__ == '__main__':
         unittest.main()
     </code>
-
